@@ -1,13 +1,24 @@
 const express = require('express');
+const dotenv = require('dotenv');
+const { basePath, environments } = require('../constants');
 
 const server = express();
 
-const PORT = 8080;
+let environmentPath = `${basePath}environment.env`;
+
+if (process.env.ENVIRONMENT === environments.production) {
+    environmentPath = `${basePath}environment.prod.env`;
+}
+
+dotenv.config({ path: environmentPath });
+
+const PORT = process.env.PORT;
 
 server.use(express.json());
 
 server.listen(PORT, () => {
-    console.log(`The server is running on: ${PORT}`);
+    const message = process.env.MESSAGE.split('{{PORT}}').join(PORT)
+    console.log(message);
 });
 
 module.exports = { server };
