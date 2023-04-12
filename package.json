@@ -1,0 +1,33 @@
+{
+  "name": "case-rest",
+  "version": "1.0.0",
+  "description": "simple rest service for communication with an angular project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "prod": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terzurumluoglu/case-rest.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs",
+    "restful"
+  ],
+  "author": "Toprak ERZURUMLUOĞLU <toprakerzurumluoglu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terzurumluoglu/case-rest/issues"
+  },
+  "homepage": "https://github.com/terzurumluoglu/case-rest#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
