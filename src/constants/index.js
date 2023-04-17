@@ -5,4 +5,8 @@ const environments = {
     production: 'production'
 };
 
-module.exports = { basePath, environments };
+const ERROR_MESSAGES = {
+    EADDRINUSE: 'This port is used by another application!'
+};
+
+module.exports = { basePath, environments, ERROR_MESSAGES };
