@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user.controller');
-const albumRoute = require('../routes/album.route')
+const albumController = require('../controllers/album.controller');
 
-// Re-Route
-router.use('/:id/albums', albumRoute);
+router.route('/:id/albums').get(albumController.getAllAlbumsByUserId);
 
 router.route('/').get(userController.getAllUsers);
 router.route('/:id').get(userController.getUserById);
