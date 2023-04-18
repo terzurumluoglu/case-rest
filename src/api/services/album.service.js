@@ -5,7 +5,7 @@ const getAllAlbums = async () => albums;
 
 const getAlbumById = async (id) => albums.find(album => album.id === id);
 
-const getAlbumsByUserId = async (userId) => albums.find(album => album.userId === userId);
+const getAllAlbumsByUserId = async (userId) => albums.filter(album => album.userId === userId);
 
 const getAllAlbumsWithPhotos = async (userId) => {
     return albums.filter(album => album.userId === userId).map(album => {
@@ -14,4 +14,4 @@ const getAllAlbumsWithPhotos = async (userId) => {
     })
 }
 
-module.exports = { getAllAlbums, getAlbumById, getAlbumsByUserId, getAllAlbumsWithPhotos };
+module.exports = { getAllAlbums, getAlbumById, getAllAlbumsByUserId, getAllAlbumsWithPhotos };

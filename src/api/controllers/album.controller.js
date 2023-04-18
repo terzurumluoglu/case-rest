@@ -34,13 +34,13 @@ const getAlbumById = asyncHandler(async (req, res, next) => {
 });
 
 // @desc   Get Albums by UserId
-// @route  GET /album/:userId
+// @route  GET users/:id/albums/
 // @access Public
-const getAlbumsByUserId = asyncHandler(async (req, res, next) => {
+const getAllAlbumsByUserId = asyncHandler(async (req, res, next) => {
 
-    const { userId } = req.params;
+    const { id } = req.params;
 
-    const albums = await albumService.getAlbumsByUserId(+userId);
+    const albums = await albumService.getAllAlbumsByUserId(+id);
 
     res.status(200).send({
         success: true,
@@ -50,4 +50,4 @@ const getAlbumsByUserId = asyncHandler(async (req, res, next) => {
     })
 });
 
-module.exports = { getAllAlbums, getAlbumById, getAlbumsByUserId };
+module.exports = { getAllAlbums, getAlbumById, getAllAlbumsByUserId };
