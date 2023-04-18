@@ -4,7 +4,7 @@ const userController = require('../controllers/user.controller');
 const albumRoute = require('../routes/album.route')
 
 // Re-Route
-router.use('/:id/album', albumRoute);
+router.use('/:id/albums', albumRoute);
 
 router.route('/').get(userController.getAllUsers);
 router.route('/:id').get(userController.getUserById);
